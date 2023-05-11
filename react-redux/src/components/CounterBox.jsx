@@ -3,7 +3,7 @@ import React from "react";
 //reducer에 있는 값을 수정 : useDispatch
 import { useDispatch, useSelector } from "react-redux";
 //dispatch에서 사용할 action 함수
-import { increase, decrease } from "../modules/counter";
+import { increase, decrease, change, change2 } from "../modules/counter";
 import ExCountBox from "./ExCountBox";
 export default function CounterBox() {
   //useSelector로 값 가져오기
@@ -23,7 +23,7 @@ export default function CounterBox() {
   let dispatch = useDispatch();
   return (
     <div>
-      {counter}
+      <h3>{counter}</h3>
       <button
         onClick={() => {
           //값을 수정하기 위해서 dispatch와 action함수 사용
@@ -41,6 +41,14 @@ export default function CounterBox() {
       >
         -1
       </button>
+        <button
+        onClick={()=>{
+            dispatch(change(5))
+        }}>+5</button>
+        <button
+        onClick={()=>{
+            dispatch(change2(30))
+        }}>+30</button>
       <br />
       <ExCountBox />
     </div>
