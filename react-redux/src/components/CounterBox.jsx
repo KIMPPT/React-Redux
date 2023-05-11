@@ -3,7 +3,8 @@ import React from "react";
 //reducer에 있는 값을 수정 : useDispatch
 import { useDispatch, useSelector } from "react-redux";
 //dispatch에서 사용할 action 함수
-import { increase } from "../modules/counter";
+import { increase, decrease } from "../modules/counter";
+import ExCountBox from "./ExCountBox";
 export default function CounterBox() {
   //useSelector로 값 가져오기
   //state는 modules의 index.js에서 작성한 rootReducer
@@ -24,12 +25,24 @@ export default function CounterBox() {
     <div>
       {counter}
       <button
-      onClick={()=>{
-        //값을 수정하기 위해서 dispatch와 action함수 사용
-        //action함수는 return값이 객체인 함수 : reducer에 작성
-        //increase()으로 작성해서 실행하는 이유 : return값 전달을 위해
-        dispatch(increase());
-      }}>+1</button>
+        onClick={() => {
+          //값을 수정하기 위해서 dispatch와 action함수 사용
+          //action함수는 return값이 객체인 함수 : reducer에 작성
+          //increase()으로 작성해서 실행하는 이유 : return값 전달을 위해
+          dispatch(increase());
+        }}
+      >
+        +1
+      </button>
+      <button
+        onClick={() => {
+          dispatch(decrease());
+        }}
+      >
+        -1
+      </button>
+      <br />
+      <ExCountBox />
     </div>
   );
 }

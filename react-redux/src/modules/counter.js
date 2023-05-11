@@ -12,6 +12,7 @@ action 생성 함수로 만들어서 사용 (return값이 객체)
 
 //action 객체를 반환하는 action 생성 함수
 export let increase = () => ({ type: "INCREASE" });
+export let decrease = () => ({ type: "DECREASE" });
 //state의 기본값 작성
 let initalState = 0;
 //action과 state를 받아와서 state를 바꾸는 reducer함수
@@ -21,6 +22,9 @@ function counter(state = initalState, action) {
   switch (action.type) {
     case "INCREASE": {
       return state + 1;
+    }
+    case "DECREASE": {
+      return state - 1;
     }
     default: {
       return state;
