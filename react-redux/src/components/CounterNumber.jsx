@@ -16,8 +16,8 @@ export default function CounterNumber() {
         +{counterNumber.num}
       </button>
       <button
-      onClick={(num)=>{
-        dispatch({type:"DECREASE_NUMBER",num})
+      onClick={()=>{
+        dispatch({type:"DECREASE_NUMBER"})
       }}>
         -{counterNumber.num}
       </button>

@@ -15,7 +15,7 @@ let initalState = {
 };
 
 //action 생성 함수
-export let increaseNumber = (num) => ({ type: "INCREASE_NUMBER", num });
+export let increaseNumber = () => ({ type: "INCREASE_NUMBER"});
 export let decreaseNumber = (num) => ({ type: "DECREASE_NUMBER", num });
 //reducer 작성
 function counterNumber(state = initalState, action) {
