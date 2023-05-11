@@ -19,8 +19,8 @@ export default function ExCountBox() {
       </button>
       <button
         onClick={() => {
-            //dispatch에 들어갈 값은 action 객체
-            //즉, dispatch({type:"DECREASE2"})와 동일
+          //dispatch에 들어갈 값은 action 객체
+          //즉, dispatch({type:"DECREASE2"})와 동일
           dispatch(decrease2());
         }}
       >

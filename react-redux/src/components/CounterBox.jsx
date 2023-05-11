@@ -41,14 +41,20 @@ export default function CounterBox() {
       >
         -1
       </button>
-        <button
-        onClick={()=>{
-            dispatch(change(5))
-        }}>+5</button>
-        <button
-        onClick={()=>{
-            dispatch(change2(30))
-        }}>+30</button>
+      <button
+        onClick={() => {
+          dispatch(change(5));
+        }}
+      >
+        +5
+      </button>
+      <button
+        onClick={() => {
+          dispatch(change2(30));
+        }}
+      >
+        +30
+      </button>
       <br />
       <ExCountBox />
     </div>

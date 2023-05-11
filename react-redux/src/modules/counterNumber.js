@@ -15,8 +15,9 @@ let initalState = {
 };
 
 //action 생성 함수
-export let increaseNumber = () => ({ type: "INCREASE_NUMBER"});
+export let increaseNumber = () => ({ type: "INCREASE_NUMBER" });
 export let decreaseNumber = (num) => ({ type: "DECREASE_NUMBER", num });
+export let changeNumber = (num) => ({ type: "CHANGE_NUMBER", payload: num });
 //reducer 작성
 function counterNumber(state = initalState, action) {
   switch (action.type) {
@@ -25,6 +26,8 @@ function counterNumber(state = initalState, action) {
       return { ...state, count: state.count + state.num };
     case "DECREASE_NUMBER":
       return { ...state, count: state.count - state.num };
+    case "CHANGE_NUMBER":
+      return { ...state, num: action.payload };
     default:
       return state;
   }

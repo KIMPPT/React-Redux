@@ -1,24 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 //redux provider 추가 : 컴포넌트로 들고옴
-import {Provider} from 'react-redux';
+import { Provider } from "react-redux";
 
 //store를 만들기 위한 createStore 추가
 //줄이 그어진 이유 : toolkit을 사용 권장
-import {createStore} from 'redux';
+import { createStore } from "redux";
 //rootReducer 가져옴
-import rootReducer from './modules';
+import rootReducer from "./modules";
 //createStore를 통해 store 생성
-let store=createStore(rootReducer);
+let store = createStore(rootReducer);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
   </React.StrictMode>
 );

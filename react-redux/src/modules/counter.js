@@ -19,8 +19,8 @@ export let decrease = () => ({ type: "DECREASE" });
 num:dispatch에서 change 함수를 불러와서 사용했을 때 정해짐
 num에는 숫자값을 넣겠다 해서, num 이름으로 붙여줌
 */
-export let change = num => ({ type: "CHANGE",num });
-export let change2 = num => ({ type: "CHANGE2",num });
+export let change = (num) => ({ type: "CHANGE", num });
+export let change2 = (num) => ({ type: "CHANGE2", num });
 
 //state의 기본값 작성
 let initalState = 0;
@@ -35,12 +35,12 @@ function counter(state = initalState, action) {
     case "DECREASE": {
       return state - 1;
     }
-    case "CHANGE":{
+    case "CHANGE": {
       //action에 다른 속성이 있다면 접근해서 사용 가능
       //action.payload 라는 속성이름을 값으로 전달해서 사용함
-      return state+action.num;
+      return state + action.num;
     }
-    case "CHANGE2":{
+    case "CHANGE2": {
       //이렇게 짠 경우 change2(num)의 num 값이 state값으로 들어간다
       return action.num;
     }
