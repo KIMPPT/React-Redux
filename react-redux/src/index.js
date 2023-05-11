@@ -9,13 +9,17 @@ import {Provider} from 'react-redux';
 //store를 만들기 위한 createStore 추가
 //줄이 그어진 이유 : toolkit을 사용 권장
 import {createStore} from 'redux';
-
 //rootReducer 가져옴
+import rootReducer from './modules';
+//createStore를 통해 store 생성
+let store=createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>
 );
 
