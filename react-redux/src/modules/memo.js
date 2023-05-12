@@ -25,14 +25,22 @@ let initalState = [
 export let addMemo = (memo) => ({ type: "ADD_MEMO", payload: memo });
 
 //reducer
-function memo(state=initalState, action) {
-    switch(action.type){
-        case("ADD_MEMO"):{
-            return
-        }
-        default:{
-            return state;
-        }
+function memo(state = initalState, action) {
+  switch (action.type) {
+    case "ADD_MEMO": {
+      //새로운 메모 작성
+      let newMemo = {
+        ...action.payload,
+        id: 3,
+      };
+      //새로운 메모 리스트 만들어서
+      let newMemoList = state.concat(newMemo);
+      //새로운 메모 리스트 return
+      return newMemoList;
     }
+    default: {
+      return state;
+    }
+  }
 }
 export default memo;

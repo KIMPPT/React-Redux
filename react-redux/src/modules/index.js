@@ -5,7 +5,8 @@ import { combineReducers } from "redux";
 import counter from "./counter";
 import counter2 from "./counter2";
 import counterNumber from "./counterNumber";
-//작성한 reducers를 객체로 묶어서 내보냄
-let rootReducer = combineReducers({ counter, counter2, counterNumber });
+import memo from "./memo";
+//작성한 reducer 들을 객체로 묶어서 내보냄
+let rootReducer = combineReducers({ counter, counter2, counterNumber, memo });
 
 export default rootReducer;
