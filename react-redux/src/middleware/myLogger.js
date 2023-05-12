@@ -2,7 +2,7 @@
 /*특징
 모든 dispatch가 호출되고 reducer가 실행되기 전에 먼저 실행되는 중간 함수
 1.reducer로 값을 바꾸기 전에 실행되는 내용을 출력 또는 수정 - 예)Logger : redux에 관한 내용 출력
-2.비동기 함수를 사용할 때 그 순서를 정해줄 수 있다 - 예) thunck
+2.비동기 함수를 사용할 때 그 순서를 정해줄 수 있다 - 예) thunk
 */
 let myLogger=store=>next=>action=>{
     //action 객체 출력({type:"~"})

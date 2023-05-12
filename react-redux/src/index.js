@@ -13,8 +13,11 @@ import { createStore ,applyMiddleware} from "redux";
 //rootReducer 가져옴
 import rootReducer from "./modules";
 import myLogger from "./middleware/myLogger";
+import logger from "redux-logger";
+//thunk 들고오기
+import ReduxThunk from 'redux-thunk'
 //createStore를 통해 store 생성 + applyMiddleware를 쓰고자 한다면 아래와 같이 ()에 쓰고자하는 middleware js를 들고옴
-let store = createStore(rootReducer,applyMiddleware(myLogger));
+let store = createStore(rootReducer,applyMiddleware(myLogger,ReduxThunk));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
