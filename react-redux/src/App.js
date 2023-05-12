@@ -5,6 +5,7 @@ import CounterNumber from "./components/CounterNumber";
 import MemoComp from "./components/MemoComp";
 import CounterThunk from "./components/CounterThunk";
 import WeatherThunk from "./components/WeatherThunk";
+import FoodThunk from "./components/FoodThunk";
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
       <MemoComp/>
       <CounterThunk/>
       <WeatherThunk/>
+      <FoodThunk/>
     </div>
   );
 }

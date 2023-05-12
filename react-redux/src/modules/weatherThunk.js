@@ -28,6 +28,8 @@ export let getweather = () => async (next) => {
   //getWeather action 함수 종료 : loading-false
   next({ type: "endloading" });
 };
+
+
 //reducer
 function weatherThunk(state = initalState, action) {
   switch (action.type) {

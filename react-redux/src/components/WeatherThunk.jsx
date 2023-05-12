@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { getweather } from "../modules/weatherThunk";
 export default function WeatherThunk() {
   let weather = useSelector((state) => state.weatherThunk);
+  console.log(weather);
   let dispatch=useDispatch()
   //
   useEffect(()=>{dispatch(getweather())},[])
