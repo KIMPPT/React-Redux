@@ -27,6 +27,7 @@ let id = 3;
 // : {text,date}를 가져와야함 > dispatch사용 때 확인
 export let addMemo = (memo) => ({ type: "ADD_MEMO", payload: memo });
 export let deleteMemo = (id) => ({ type: "DELETE_MEMO", id: id });
+export let modifyMemo = () => ({ type: "MODIFY_MEMO" });
 //reducer
 function memo(state = initalState, action) {
   switch (action.type) {

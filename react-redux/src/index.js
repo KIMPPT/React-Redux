@@ -8,12 +8,13 @@ import { Provider } from "react-redux";
 
 //store를 만들기 위한 createStore 추가
 //줄이 그어진 이유 : toolkit을 사용 권장
-import { createStore } from "redux";
+//applyMiddleware : middleware 적용하기위해 들고옴
+import { createStore ,applyMiddleware} from "redux";
 //rootReducer 가져옴
 import rootReducer from "./modules";
-//createStore를 통해 store 생성
-let store = createStore(rootReducer);
-
+import myLogger from "./middleware/myLogger";
+//createStore를 통해 store 생성 + applyMiddleware를 쓰고자 한다면 아래와 같이 ()에 쓰고자하는 middleware js를 들고옴
+let store = createStore(rootReducer,applyMiddleware(myLogger));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
