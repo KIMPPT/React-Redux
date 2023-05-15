@@ -8,6 +8,7 @@ import counterReducer from "./slices/counterSlice";
 //counterReducer와 counterSlice는 동일한 내용이다
 import counterSlice from "./slices/counterSlice";
 //combineReducer를 이용해서 묶어서 store로 내보내는 부분
+import memoSlice from "./slices/memoSlice";
 export default configureStore({
   reducer: {
     //useSelector에서 state의 어디로 접근할 지에 대한 이름.
@@ -15,5 +16,6 @@ export default configureStore({
     counter: counterSlice,
     //state.counterReducer로 접근(값은 위의 내용과 동일)
     counterReducer,
+    memo:memoSlice,
   },
 });
