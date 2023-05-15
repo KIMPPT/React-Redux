@@ -16,9 +16,15 @@ export let counterSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
+    //값을 입력받아와서 증가하는 함수
+    //action은 redux에서 값을 전달한 action객체
+    //action의 payload는 redux toolkit에서 고정해서 사용
+    incrementByAmount:(state,action)=>{
+      state.value+=action.payload
+    }
   },
 });
 //action 생성함수를 slice를 통해서 내보내기
-export let { increment, decrement } = counterSlice.actions;
+export let { increment, decrement,incrementByAmount } = counterSlice.actions;
 //reducer 함수를 slice를 통해서 내보내기
 export default counterSlice.reducer;
